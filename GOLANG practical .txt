@@ -1,0 +1,58 @@
+Here is a simple Go program that takes two numbers as input from the user and performs basic arithmetic operations like addition, subtraction, multiplication, division, and modulus:
+
+```go
+package main
+
+import (
+	"fmt"
+)
+
+func main() {
+	var num1, num2 float64
+
+	// Taking input from the user
+	fmt.Print("Enter first number: ")
+	fmt.Scanln(&num1)
+
+	fmt.Print("Enter second number: ")
+	fmt.Scanln(&num2)
+
+	// Performing arithmetic operations
+	add := num1 + num2
+	sub := num1 - num2
+	mul := num1 * num2
+
+	// Since division and modulus should be checked for divide-by-zero errors
+	if num2 != 0 {
+		div := num1 / num2
+		mod := int(num1) % int(num2)
+
+		// Printing results
+		fmt.Printf("\nAddition: %.2f\n", add)
+		fmt.Printf("Subtraction: %.2f\n", sub)
+		fmt.Printf("Multiplication: %.2f\n", mul)
+		fmt.Printf("Division: %.2f\n", div)
+		fmt.Printf("Modulus: %d\n", mod)
+	} else {
+		fmt.Println("Error: Division or Modulus by zero is not allowed.")
+	}
+}
+```
+
+### Explanation:
+- The program prompts the user to input two numbers.
+- It performs the following operations: addition, subtraction, multiplication, division, and modulus.
+- For division and modulus operations, it checks whether the second number is zero to avoid division-by-zero errors.
+- The results are printed with proper formatting.
+
+### Sample Output:
+```
+Enter first number: 10
+Enter second number: 3
+
+Addition: 13.00
+Subtraction: 7.00
+Multiplication: 30.00
+Division: 3.33
+Modulus: 1
+```
